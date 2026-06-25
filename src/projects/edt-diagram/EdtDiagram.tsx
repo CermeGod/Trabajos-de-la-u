@@ -1,8 +1,8 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import {
   Flag, CalendarDays, Search, PenTool, Code2,
   TestTube2, Rocket, CheckCircle, Layers,
-  ZoomIn, ZoomOut, Maximize2, RotateCcw,
+  ZoomIn, ZoomOut, RotateCcw,
   Plus, Trash2, Edit2, Check, X
 } from 'lucide-react';
 
@@ -56,9 +56,8 @@ const PHASES_RAW = [
     light: "#ccfbf1",
     icon: <Search size={16} />,
     tasks: [
-      ["1.3.1", "Documento de Revisión de Procesos"],
-      ["1.3.2", "Documento de Especificación de Requisitos"],
-      ["1.3.3", "Acta de Validación con Usuarios"]
+      ["1.3.1", "Revisión de Procesos"],
+      ["1.3.2", "Documento de Análisis de Requisitos"]
     ]
   },
   {
@@ -83,11 +82,10 @@ const PHASES_RAW = [
     tasks: [
       ["1.5.1", "Módulo Caja Central"],
       ["1.5.2", "Módulo Dashboard"],
-      ["1.5.3", "Integración Institucional"],
-      ["1.5.4", "Pasarela de Pago"],
-      ["1.5.5", "Control de Paso"],
-      ["1.5.6", "Seguridad y Auditoría"],
-      ["1.5.7", "Prueba de Migración de Datos"]
+      ["1.5.3", "Módulo de Liquidación y Anulación"],
+      ["1.5.4", "Desarrollo de APIs de Integración"],
+      ["1.5.5", "Desarrollo de APIs de Pasarela de Pagos"],
+      ["1.5.6", "Validación de Paso"]
     ]
   },
   {
@@ -98,9 +96,11 @@ const PHASES_RAW = [
     icon: <TestTube2 size={16} />,
     tasks: [
       ["1.6.1", "Plan de Pruebas"],
-      ["1.6.2", "Pruebas Funcionales y Seguridad"],
-      ["1.6.3", "Pruebas Integrales"],
-      ["1.6.4", "Corrección de Defectos"]
+      ["1.6.2", "Instalación en Ambiente de Pruebas"],
+      ["1.6.3", "Pruebas Funcionales y Seguridad"],
+      ["1.6.4", "Pruebas de Migración de Datos"],
+      ["1.6.5", "Pruebas Integrales"],
+      ["1.6.6", "Corrección de Defectos"]
     ]
   },
   {
@@ -110,11 +110,10 @@ const PHASES_RAW = [
     light: "#ede9fe",
     icon: <Rocket size={16} />,
     tasks: [
-      ["1.7.1", "Instalación en Ambiente de Pruebas"],
-      ["1.7.2", "Instalación en Ambiente de Producción"],
-      ["1.7.3", "Migración de Datos Oficial"],
-      ["1.7.4", "Manual de Usuario y Técnico"],
-      ["1.7.5", "Capacitación a Usuarios y OSI"]
+      ["1.7.1", "Instalación en Ambiente de Producción"],
+      ["1.7.2", "Migración de Datos Oficial"],
+      ["1.7.3", "Manual de Usuario y Técnico"],
+      ["1.7.4", "Capacitación a Usuarios y OSI"]
     ]
   },
   {
@@ -124,8 +123,7 @@ const PHASES_RAW = [
     light: "#ffe4e6",
     icon: <CheckCircle size={16} />,
     tasks: [
-      ["1.8.1", "Acta de Aceptación"],
-      ["1.8.2", "Acta de Cierre"]
+      ["1.8.1", "Acta de Cierre"]
     ]
   }
 ];
