@@ -27,103 +27,94 @@ interface Pos { x: number; y: number }
 // ─────────────────────────────────────────────────────────────
 // INITIAL DATA
 // ─────────────────────────────────────────────────────────────
-const PHASES_RAW = [
+interface TreeNodeData {
+  id: string;
+  code: string;
+  title: string;
+  color?: string;
+  light?: string;
+  icon?: React.ReactNode;
+  children?: TreeNodeData[];
+}
+
+const EDT_TREE: TreeNodeData[] = [
   {
-    id: "1.1",
-    title: "Inicio",
-    color: "#2563eb",
-    light: "#dbeafe",
-    icon: <Flag size={16} />,
-    tasks: [
-      ["1.1.1", "Acta de Constitución del Proyecto"],
-      ["1.1.2", "Registro de Interesados"]
+    id: "1", code: "1", title: "Inicio", color: "#2563eb", light: "#dbeafe", icon: <Flag size={16} />,
+    children: [
+      { id: "1.1", code: "1.1", title: "Acta de Constitución del Proyecto" },
+      { id: "1.2", code: "1.2", title: "Registro de Interesados" }
     ]
   },
   {
-    id: "1.2",
-    title: "Planificación",
-    color: "#4f46e5",
-    light: "#e0e7ff",
-    icon: <CalendarDays size={16} />,
-    tasks: [
-      ["1.2.1", "Plan de Gestión del Proyecto"]
+    id: "2", code: "2", title: "Planificación", color: "#4f46e5", light: "#e0e7ff", icon: <CalendarDays size={16} />,
+    children: [
+      { id: "2.1", code: "2.1", title: "Plan de Gestión del Proyecto" }
     ]
   },
   {
-    id: "1.3",
-    title: "Análisis",
-    color: "#0d9488",
-    light: "#ccfbf1",
-    icon: <Search size={16} />,
-    tasks: [
-      ["1.3.1", "Revisión de Procesos"],
-      ["1.3.2", "Documento de Análisis de Requisitos"]
+    id: "3", code: "3", title: "Ejecución", color: "#059669", light: "#d1fae5", icon: <Code2 size={16} />,
+    children: [
+      {
+        id: "3.1", code: "3.1", title: "Análisis", color: "#0d9488", light: "#ccfbf1", icon: <Search size={16} />,
+        children: [
+          { id: "3.1.1", code: "3.1.1", title: "Revisión de Procesos" },
+          { id: "3.1.2", code: "3.1.2", title: "Documento de Análisis de Requisitos" }
+        ]
+      },
+      {
+        id: "3.2", code: "3.2", title: "Diseño", color: "#0891b2", light: "#cffafe", icon: <PenTool size={16} />,
+        children: [
+          { id: "3.2.1", code: "3.2.1", title: "Diseño de Arquitectura de Solución" },
+          { id: "3.2.2", code: "3.2.2", title: "Diseño de Base de Datos" },
+          { id: "3.2.3", code: "3.2.3", title: "Diseño de Integración de APIs" },
+          { id: "3.2.4", code: "3.2.4", title: "Diseño de Pantallas" }
+        ]
+      },
+      {
+        id: "3.3", code: "3.3", title: "Construcción", color: "#059669", light: "#d1fae5", icon: <Code2 size={16} />,
+        children: [
+          { id: "3.3.1", code: "3.3.1", title: "Módulo Caja Central" },
+          { id: "3.3.2", code: "3.3.2", title: "Módulo Dashboard" },
+          { id: "3.3.3", code: "3.3.3", title: "Módulo de Liquidación y Anulación" },
+          { id: "3.3.4", code: "3.3.4", title: "Desarrollo de APIs de Integración" },
+          { id: "3.3.5", code: "3.3.5", title: "Desarrollo de APIs de Pasarela de Pagos" },
+          { id: "3.3.6", code: "3.3.6", title: "Validación de Paso" }
+        ]
+      },
+      {
+        id: "3.4", code: "3.4", title: "Pruebas", color: "#d97706", light: "#fef3c7", icon: <TestTube2 size={16} />,
+        children: [
+          { id: "3.4.1", code: "3.4.1", title: "Plan de Pruebas" },
+          { id: "3.4.2", code: "3.4.2", title: "Instalación en Ambiente de Pruebas" },
+          { id: "3.4.3", code: "3.4.3", title: "Pruebas Funcionales y Seguridad" },
+          { id: "3.4.4", code: "3.4.4", title: "Pruebas de Migración de Datos" },
+          { id: "3.4.5", code: "3.4.5", title: "Pruebas Integrales" },
+          { id: "3.4.6", code: "3.4.6", title: "Corrección de Defectos" }
+        ]
+      },
+      {
+        id: "3.5", code: "3.5", title: "Despliegue", color: "#7c3aed", light: "#ede9fe", icon: <Rocket size={16} />,
+        children: [
+          { id: "3.5.1", code: "3.5.1", title: "Instalación en Ambiente de Producción" },
+          { id: "3.5.2", code: "3.5.2", title: "Migración de Datos Oficial" },
+          { id: "3.5.3", code: "3.5.3", title: "Manual de Usuario y Técnico" },
+          { id: "3.5.4", code: "3.5.4", title: "Capacitación a Usuarios y OSI" }
+        ]
+      }
     ]
   },
   {
-    id: "1.4",
-    title: "Diseño",
-    color: "#0891b2",
-    light: "#cffafe",
-    icon: <PenTool size={16} />,
-    tasks: [
-      ["1.4.1", "Diseño de Arquitectura de Solución"],
-      ["1.4.2", "Diseño de Base de Datos"],
-      ["1.4.3", "Diseño de Integración de APIs"],
-      ["1.4.4", "Diseño de Pantallas"]
+    id: "4", code: "4", title: "Monitoreo y Control", color: "#d97706", light: "#fef3c7", icon: <Search size={16} />,
+    children: [
+      { id: "4.1", code: "4.1", title: "Validaciones del Alcance" },
+      { id: "4.2", code: "4.2", title: "Monitoreo de Riesgos" }
     ]
   },
   {
-    id: "1.5",
-    title: "Construcción",
-    color: "#059669",
-    light: "#d1fae5",
-    icon: <Code2 size={16} />,
-    tasks: [
-      ["1.5.1", "Módulo Caja Central"],
-      ["1.5.2", "Módulo Dashboard"],
-      ["1.5.3", "Módulo de Liquidación y Anulación"],
-      ["1.5.4", "Desarrollo de APIs de Integración"],
-      ["1.5.5", "Desarrollo de APIs de Pasarela de Pagos"],
-      ["1.5.6", "Validación de Paso"]
-    ]
-  },
-  {
-    id: "1.6",
-    title: "Pruebas",
-    color: "#d97706",
-    light: "#fef3c7",
-    icon: <TestTube2 size={16} />,
-    tasks: [
-      ["1.6.1", "Plan de Pruebas"],
-      ["1.6.2", "Instalación en Ambiente de Pruebas"],
-      ["1.6.3", "Pruebas Funcionales y Seguridad"],
-      ["1.6.4", "Pruebas de Migración de Datos"],
-      ["1.6.5", "Pruebas Integrales"],
-      ["1.6.6", "Corrección de Defectos"]
-    ]
-  },
-  {
-    id: "1.7",
-    title: "Despliegue",
-    color: "#7c3aed",
-    light: "#ede9fe",
-    icon: <Rocket size={16} />,
-    tasks: [
-      ["1.7.1", "Instalación en Ambiente de Producción"],
-      ["1.7.2", "Migración de Datos Oficial"],
-      ["1.7.3", "Manual de Usuario y Técnico"],
-      ["1.7.4", "Capacitación a Usuarios y OSI"]
-    ]
-  },
-  {
-    id: "1.8",
-    title: "Cierre",
-    color: "#be123c",
-    light: "#ffe4e6",
-    icon: <CheckCircle size={16} />,
-    tasks: [
-      ["1.8.1", "Acta de Cierre"]
+    id: "5", code: "5", title: "Cierre", color: "#be123c", light: "#ffe4e6", icon: <CheckCircle size={16} />,
+    children: [
+      { id: "5.1", code: "5.1", title: "Entrega del Producto" },
+      { id: "5.2", code: "5.2", title: "Acta de Cierre y Aceptación" }
     ]
   }
 ];
@@ -137,23 +128,33 @@ INITIAL_NODES.push({
   icon: <Layers size={22} />,
 });
 
-PHASES_RAW.forEach((ph) => {
-  INITIAL_NODES.push({
-    id: ph.id, label: ph.title, code: ph.id, type: 'phase',
-    color: ph.color, light: ph.light, icon: ph.icon,
-    parentId: 'root',
-  });
-  INITIAL_EDGES.push({ from: 'root', to: ph.id });
-
-  ph.tasks.forEach(([tid, tname]) => {
+function flattenTree(nodes: TreeNodeData[], parentId: string, depth: number, parentColor: string, parentLight: string) {
+  nodes.forEach(n => {
+    const color = n.color || parentColor;
+    const light = n.light || parentLight;
+    // Map depth 1 to phase, everything else to task
+    const type: NodeType = depth === 1 ? 'phase' : 'task';
+    
     INITIAL_NODES.push({
-      id: tid, label: tname as string, code: tid, type: 'task',
-      color: ph.color, light: ph.light,
-      parentId: ph.id,
+      id: n.id,
+      label: n.title,
+      code: n.code,
+      type,
+      color,
+      light,
+      icon: n.icon,
+      parentId
     });
-    INITIAL_EDGES.push({ from: ph.id, to: tid });
+    
+    INITIAL_EDGES.push({ from: parentId, to: n.id });
+
+    if (n.children) {
+      flattenTree(n.children, n.id, depth + 1, color, light);
+    }
   });
-});
+}
+
+flattenTree(EDT_TREE, 'root', 1, '#1e3a5f', '#0f172a');
 
 // ─────────────────────────────────────────────────────────────
 // NODE DIMENSIONS
@@ -173,22 +174,51 @@ function nodeSize(type: NodeType) {
 // ─────────────────────────────────────────────────────────────
 function buildInitialPositions(): Record<string, Pos> {
   const pos: Record<string, Pos> = {};
-  const PHASE_COL_W = 210;
-  const totalW = PHASES_RAW.length * PHASE_COL_W;
-  const startX = -totalW / 2 + PHASE_COL_W / 2;
-
   pos['root'] = { x: -ROOT_W / 2, y: -ROOT_H / 2 };
 
-  PHASES_RAW.forEach((ph, pi) => {
-    const phaseCX = startX + pi * PHASE_COL_W;
-    pos[ph.id] = { x: phaseCX - PHASE_W / 2, y: ROOT_H / 2 + 80 };
+  const level1 = INITIAL_NODES.filter(n => n.parentId === 'root');
+  
+  const colW = 200;
+  const footprints = level1.map(n1 => {
+    const l2 = INITIAL_NODES.filter(n => n.parentId === n1.id);
+    const hasL3 = l2.some(n2 => INITIAL_NODES.some(n3 => n3.parentId === n2.id));
+    if (hasL3) return Math.max(1, l2.length) * colW;
+    return colW;
+  });
 
-    ph.tasks.forEach(([tid], ti) => {
-      pos[tid as string] = {
-        x: phaseCX - TASK_W / 2,
-        y: ROOT_H / 2 + 80 + PHASE_H + 50 + ti * (TASK_H + 10),
-      };
-    });
+  const totalW = footprints.reduce((acc, w) => acc + w, 0);
+  let currentX = -totalW / 2;
+
+  level1.forEach((nodeL1, i1) => {
+    const fw = footprints[i1];
+    const cxL1 = currentX + fw / 2;
+    const s1 = nodeSize(nodeL1.type);
+    pos[nodeL1.id] = { x: cxL1 - s1.w / 2, y: ROOT_H / 2 + 60 };
+
+    const level2 = INITIAL_NODES.filter(n => n.parentId === nodeL1.id);
+    const hasL3 = level2.some(n2 => INITIAL_NODES.some(n3 => n3.parentId === n2.id));
+
+    if (hasL3) {
+      let cxL2 = currentX + colW / 2;
+      level2.forEach((nodeL2) => {
+        const s2 = nodeSize(nodeL2.type);
+        pos[nodeL2.id] = { x: cxL2 - s2.w / 2, y: ROOT_H / 2 + 60 + s1.h + 60 };
+        
+        const level3 = INITIAL_NODES.filter(n => n.parentId === nodeL2.id);
+        level3.forEach((nodeL3, i3) => {
+          const s3 = nodeSize(nodeL3.type);
+          pos[nodeL3.id] = { x: cxL2 - s3.w / 2, y: ROOT_H / 2 + 60 + s1.h + 60 + s2.h + 40 + i3 * (s3.h + 10) };
+        });
+        cxL2 += colW;
+      });
+    } else {
+      level2.forEach((nodeL2, i2) => {
+        const s2 = nodeSize(nodeL2.type);
+        pos[nodeL2.id] = { x: cxL1 - s2.w / 2, y: ROOT_H / 2 + 60 + s1.h + 60 + i2 * (s2.h + 10) };
+      });
+    }
+
+    currentX += fw;
   });
 
   return pos;
