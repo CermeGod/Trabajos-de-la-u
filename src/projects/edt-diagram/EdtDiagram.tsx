@@ -104,13 +104,6 @@ const EDT_TREE: TreeNodeData[] = [
     ]
   },
   {
-    id: "4", code: "4", title: "Monitoreo y Control", color: "#d97706", light: "#fef3c7", icon: <Search size={16} />,
-    children: [
-      { id: "4.1", code: "4.1", title: "Validaciones del Alcance", tooltip: "como se muestra en el edt del AV de la semana 2 unidad 1" },
-      { id: "4.2", code: "4.2", title: "Monitoreo de Riesgos", tooltip: "como se muestra en el edt del AV de la semana 2 unidad 1" }
-    ]
-  },
-  {
     id: "5", code: "5", title: "Cierre", color: "#be123c", light: "#ffe4e6", icon: <CheckCircle size={16} />,
     children: [
       { id: "5.1", code: "5.1", title: "Acta de Cierre" }
@@ -801,7 +794,6 @@ export default function App() {
         </ul>
         <p style={{ margin: '0 0 4px 0', color: '#fbbf24', fontWeight: 600 }}>⚠️ Lo que no corregimos y por qué:</p>
         <ul style={{ margin: 0, paddingLeft: 18, color: '#94a3b8' }}>
-          <li><b>Monitoreo y Control:</b> Se mantuvo porque la PPT de la semana 2 unidad 1 lo exige en la estructura base (ver popup al pasar el cursor).</li>
           <li><b>Manuales separados:</b> Aunque el profe sugirió agruparlos, la PPT indica separación.</li>
         </ul>
       </div>
