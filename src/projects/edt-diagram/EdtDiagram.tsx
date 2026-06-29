@@ -19,6 +19,7 @@ interface FlatNode {
   color: string;
   light: string;
   icon?: React.ReactNode;
+  tooltip?: string;
   parentId?: string;
 }
 
@@ -34,6 +35,7 @@ interface TreeNodeData {
   color?: string;
   light?: string;
   icon?: React.ReactNode;
+  tooltip?: string;
   children?: TreeNodeData[];
 }
 
@@ -71,34 +73,32 @@ const EDT_TREE: TreeNodeData[] = [
         ]
       },
       {
-        id: "3.3", code: "3.3", title: "Construcción", color: "#059669", light: "#d1fae5", icon: <Code2 size={16} />,
+        id: "3.3", code: "3.3", title: "Desarrollo", color: "#059669", light: "#d1fae5", icon: <Code2 size={16} />,
         children: [
           { id: "3.3.1", code: "3.3.1", title: "Módulo Caja Central" },
           { id: "3.3.2", code: "3.3.2", title: "Módulo Dashboard" },
           { id: "3.3.3", code: "3.3.3", title: "Módulo de Liquidación y Anulación" },
           { id: "3.3.4", code: "3.3.4", title: "Desarrollo de APIs de Integración" },
-          { id: "3.3.5", code: "3.3.5", title: "Desarrollo de APIs de Pasarela de Pagos" },
-          { id: "3.3.6", code: "3.3.6", title: "Validación de Paso" }
+          { id: "3.3.5", code: "3.3.5", title: "Desarrollo de APIs de Pasarela de Pagos" }
         ]
       },
       {
         id: "3.4", code: "3.4", title: "Pruebas", color: "#d97706", light: "#fef3c7", icon: <TestTube2 size={16} />,
         children: [
           { id: "3.4.1", code: "3.4.1", title: "Plan de Pruebas" },
-          { id: "3.4.2", code: "3.4.2", title: "Instalación en Ambiente de Pruebas" },
-          { id: "3.4.3", code: "3.4.3", title: "Pruebas Funcionales y Seguridad" },
-          { id: "3.4.4", code: "3.4.4", title: "Pruebas de Migración de Datos" },
-          { id: "3.4.5", code: "3.4.5", title: "Pruebas Integrales" },
-          { id: "3.4.6", code: "3.4.6", title: "Corrección de Defectos" }
+          { id: "3.4.2", code: "3.4.2", title: "Instalación de Ambiente de Pruebas" },
+          { id: "3.4.3", code: "3.4.3", title: "Pruebas de Integración" },
+          { id: "3.4.4", code: "3.4.4", title: "Pruebas Funcionales" },
+          { id: "3.4.5", code: "3.4.5", title: "Pruebas no Funcionales" }
         ]
       },
       {
-        id: "3.5", code: "3.5", title: "Despliegue", color: "#7c3aed", light: "#ede9fe", icon: <Rocket size={16} />,
+        id: "3.5", code: "3.5", title: "Implementación", color: "#7c3aed", light: "#ede9fe", icon: <Rocket size={16} />,
         children: [
           { id: "3.5.1", code: "3.5.1", title: "Instalación en Ambiente de Producción" },
-          { id: "3.5.2", code: "3.5.2", title: "Migración de Datos Oficial" },
-          { id: "3.5.3", code: "3.5.3", title: "Manual de Usuario y Técnico" },
-          { id: "3.5.4", code: "3.5.4", title: "Capacitación a Usuarios y OSI" }
+          { id: "3.5.2", code: "3.5.2", title: "Manual de Usuario", tooltip: "como se muestra en el edt del AV de la semana 2 unidad 1" },
+          { id: "3.5.3", code: "3.5.3", title: "Manual de Instalación", tooltip: "como se muestra en el edt del AV de la semana 2 unidad 1" },
+          { id: "3.5.4", code: "3.5.4", title: "Capacitación a Usuarios" }
         ]
       }
     ]
@@ -106,15 +106,14 @@ const EDT_TREE: TreeNodeData[] = [
   {
     id: "4", code: "4", title: "Monitoreo y Control", color: "#d97706", light: "#fef3c7", icon: <Search size={16} />,
     children: [
-      { id: "4.1", code: "4.1", title: "Validaciones del Alcance" },
-      { id: "4.2", code: "4.2", title: "Monitoreo de Riesgos" }
+      { id: "4.1", code: "4.1", title: "Validaciones del Alcance", tooltip: "como se muestra en el edt del AV de la semana 2 unidad 1" },
+      { id: "4.2", code: "4.2", title: "Monitoreo de Riesgos", tooltip: "como se muestra en el edt del AV de la semana 2 unidad 1" }
     ]
   },
   {
     id: "5", code: "5", title: "Cierre", color: "#be123c", light: "#ffe4e6", icon: <CheckCircle size={16} />,
     children: [
-      { id: "5.1", code: "5.1", title: "Entrega del Producto" },
-      { id: "5.2", code: "5.2", title: "Acta de Cierre y Aceptación" }
+      { id: "5.1", code: "5.1", title: "Acta de Cierre" }
     ]
   }
 ];
@@ -143,6 +142,7 @@ function flattenTree(nodes: TreeNodeData[], parentId: string, depth: number, par
       color,
       light,
       icon: n.icon,
+      tooltip: n.tooltip,
       parentId
     });
     
@@ -387,6 +387,7 @@ function NodeCard({ node, pos, onPointerDown, isDragging, onEditNode, onAddChild
         onPointerDown={handlePD}
         onPointerEnter={() => setIsHovered(true)}
         onPointerLeave={() => setIsHovered(false)}
+        title={node.tooltip}
       >
         {actionButtons}
         
@@ -774,6 +775,35 @@ export default function App() {
         <span>🖱️ <b style={{ color: '#64748b' }}>Arrastrar</b></span>
         <span>✨ <b style={{ color: '#64748b' }}>Hover para editar/añadir</b></span>
         <span>✥ <b style={{ color: '#64748b' }}>Click der pan</b></span>
+      </div>
+
+      {/* Floating window for corrections */}
+      <div style={{
+        position: 'fixed', top: 18, right: 24,
+        background: 'rgba(15,23,42,0.9)',
+        border: '1px solid rgba(148,163,184,0.2)',
+        borderRadius: 12, padding: 16, width: 340,
+        color: '#e2e8f0', fontSize: 12, lineHeight: 1.5,
+        backdropFilter: 'blur(12px)',
+        boxShadow: '0 10px 30px rgba(0,0,0,0.3)',
+        zIndex: 100
+      }}>
+        <h3 style={{ margin: '0 0 10px 0', fontSize: 13, color: '#f8fafc', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: 6 }}>
+          📝 Correcciones y Mejoras (Profesor y PPTs)
+        </h3>
+        <p style={{ margin: '0 0 4px 0', color: '#6ee7b7', fontWeight: 600 }}>✅ Puntos corregidos:</p>
+        <ul style={{ margin: '0 0 10px 0', paddingLeft: 18, color: '#94a3b8' }}>
+          <li>Eliminación de Validación de Paso, Corrección de Defectos y Migración de Datos Oficial.</li>
+          <li>Cambio de nombres a <b>Desarrollo</b> e <b>Implementación</b>.</li>
+          <li>Separación en Manual de Usuario y Manual de Instalación.</li>
+          <li>Nuevo flujo de Pruebas.</li>
+          <li>En Cierre se dejó solo el Acta.</li>
+        </ul>
+        <p style={{ margin: '0 0 4px 0', color: '#fbbf24', fontWeight: 600 }}>⚠️ Lo que no corregimos y por qué:</p>
+        <ul style={{ margin: 0, paddingLeft: 18, color: '#94a3b8' }}>
+          <li><b>Monitoreo y Control:</b> Se mantuvo porque la PPT de la semana 2 unidad 1 lo exige en la estructura base (ver popup al pasar el cursor).</li>
+          <li><b>Manuales separados:</b> Aunque el profe sugirió agruparlos, la PPT indica separación.</li>
+        </ul>
       </div>
     </div>
   );
