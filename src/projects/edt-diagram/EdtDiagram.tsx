@@ -112,7 +112,7 @@ const EDT_TREE: TreeNodeData[] = [
   {
     id: "5", code: "5", title: "Cierre", color: "#be123c", light: "#ffe4e6", icon: <CheckCircle size={16} />,
     children: [
-      { id: "5.1", code: "5.1", title: "Acta de Cierre" }
+      { id: "5.1", code: "5.1", title: "Acta de Cierre y Aceptación Formal" }
     ]
   }
 ];
