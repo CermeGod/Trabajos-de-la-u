@@ -60,7 +60,8 @@ const EDT_TREE: TreeNodeData[] = [
         id: "3.1", code: "3.1", title: "Análisis", color: "#0d9488", light: "#ccfbf1", icon: <Search size={16} />,
         children: [
           { id: "3.1.1", code: "3.1.1", title: "Revisión de Procesos" },
-          { id: "3.1.2", code: "3.1.2", title: "Documento de Análisis de Requisitos" }
+          { id: "3.1.2", code: "3.1.2", title: "Documento de Análisis de Requisitos" },
+          { id: "3.1.3", code: "3.1.3", title: "Acta de Aceptación" }
         ]
       },
       {
@@ -69,7 +70,8 @@ const EDT_TREE: TreeNodeData[] = [
           { id: "3.2.1", code: "3.2.1", title: "Diseño de Arquitectura de Solución" },
           { id: "3.2.2", code: "3.2.2", title: "Diseño de Base de Datos" },
           { id: "3.2.3", code: "3.2.3", title: "Diseño de Integración de APIs" },
-          { id: "3.2.4", code: "3.2.4", title: "Diseño de Pantallas" }
+          { id: "3.2.4", code: "3.2.4", title: "Diseño de Pantallas" },
+          { id: "3.2.5", code: "3.2.5", title: "Acta de Aceptación" }
         ]
       },
       {
@@ -79,7 +81,11 @@ const EDT_TREE: TreeNodeData[] = [
           { id: "3.3.2", code: "3.3.2", title: "Módulo Dashboard" },
           { id: "3.3.3", code: "3.3.3", title: "Módulo de Liquidación y Anulación" },
           { id: "3.3.4", code: "3.3.4", title: "Desarrollo de APIs de Integración" },
-          { id: "3.3.5", code: "3.3.5", title: "Desarrollo de APIs de Pasarela de Pagos" }
+          { id: "3.3.5", code: "3.3.5", title: "Desarrollo de APIs de Pasarela de Pagos" },
+          { id: "3.3.6", code: "3.3.6", title: "Pruebas Integrales" },
+          { id: "3.3.7", code: "3.3.7", title: "Manual de Usuario", tooltip: "como se muestra en el edt del AV de la semana 2 unidad 1" },
+          { id: "3.3.8", code: "3.3.8", title: "Manual de Instalación", tooltip: "como se muestra en el edt del AV de la semana 2 unidad 1" },
+          { id: "3.3.9", code: "3.3.9", title: "Acta de Aceptación" }
         ]
       },
       {
@@ -87,18 +93,18 @@ const EDT_TREE: TreeNodeData[] = [
         children: [
           { id: "3.4.1", code: "3.4.1", title: "Plan de Pruebas" },
           { id: "3.4.2", code: "3.4.2", title: "Instalación de Ambiente de Pruebas" },
-          { id: "3.4.3", code: "3.4.3", title: "Pruebas de Integración" },
-          { id: "3.4.4", code: "3.4.4", title: "Pruebas Funcionales" },
-          { id: "3.4.5", code: "3.4.5", title: "Pruebas no Funcionales" }
+          { id: "3.4.3", code: "3.4.3", title: "Pruebas Funcionales" },
+          { id: "3.4.4", code: "3.4.4", title: "Pruebas no Funcionales" },
+          { id: "3.4.5", code: "3.4.5", title: "Corrección de Defectos" },
+          { id: "3.4.6", code: "3.4.6", title: "Acta de Aceptación" }
         ]
       },
       {
         id: "3.5", code: "3.5", title: "Implementación", color: "#7c3aed", light: "#ede9fe", icon: <Rocket size={16} />,
         children: [
           { id: "3.5.1", code: "3.5.1", title: "Instalación en Ambiente de Producción" },
-          { id: "3.5.2", code: "3.5.2", title: "Manual de Usuario", tooltip: "como se muestra en el edt del AV de la semana 2 unidad 1" },
-          { id: "3.5.3", code: "3.5.3", title: "Manual de Instalación", tooltip: "como se muestra en el edt del AV de la semana 2 unidad 1" },
-          { id: "3.5.4", code: "3.5.4", title: "Capacitación a Usuarios" }
+          { id: "3.5.2", code: "3.5.2", title: "Capacitación a Usuarios" },
+          { id: "3.5.3", code: "3.5.3", title: "Acta de Aceptación" }
         ]
       }
     ]
@@ -786,10 +792,11 @@ export default function App() {
         </h3>
         <p style={{ margin: '0 0 4px 0', color: '#6ee7b7', fontWeight: 600 }}>✅ Puntos corregidos:</p>
         <ul style={{ margin: '0 0 10px 0', paddingLeft: 18, color: '#94a3b8' }}>
-          <li>Eliminación de Validación de Paso, Corrección de Defectos y Migración de Datos Oficial.</li>
+          <li>Eliminación de Validación de Paso y Migración de Datos Oficial.</li>
           <li>Cambio de nombres a <b>Desarrollo</b> e <b>Implementación</b>.</li>
-          <li>Separación en Manual de Usuario y Manual de Instalación.</li>
-          <li>Nuevo flujo de Pruebas.</li>
+          <li>Separación en Manual de Usuario y Manual de Instalación (movidos a Desarrollo).</li>
+          <li>Inclusión de <b>Acta de Aceptación</b> al final de cada fase de Ejecución.</li>
+          <li>En Pruebas se reincorporó <b>Corrección de Defectos</b> al final.</li>
           <li>En Cierre se dejó solo el Acta.</li>
         </ul>
         <p style={{ margin: '0 0 4px 0', color: '#fbbf24', fontWeight: 600 }}>⚠️ Lo que no corregimos y por qué:</p>
