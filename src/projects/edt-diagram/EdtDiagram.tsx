@@ -61,7 +61,7 @@ const EDT_TREE: TreeNodeData[] = [
         children: [
           { id: "3.1.1", code: "3.1.1", title: "Revisión de Procesos" },
           { id: "3.1.2", code: "3.1.2", title: "Documento de Análisis de Requisitos" },
-          { id: "3.1.3", code: "3.1.3", title: "Acta de Aceptación" }
+          { id: "3.1.3", code: "3.1.3", title: "Acta de Aceptación de Análisis" }
         ]
       },
       {
@@ -70,22 +70,23 @@ const EDT_TREE: TreeNodeData[] = [
           { id: "3.2.1", code: "3.2.1", title: "Diseño de Arquitectura de Solución" },
           { id: "3.2.2", code: "3.2.2", title: "Diseño de Base de Datos" },
           { id: "3.2.3", code: "3.2.3", title: "Diseño de Integración de APIs" },
-          { id: "3.2.4", code: "3.2.4", title: "Diseño de Pantallas" },
-          { id: "3.2.5", code: "3.2.5", title: "Acta de Aceptación" }
+          { id: "3.2.4", code: "3.2.4", title: "Diseño de Interfaces UI/UX" },
+          { id: "3.2.5", code: "3.2.5", title: "Acta de Aceptación de Diseño" }
         ]
       },
       {
         id: "3.3", code: "3.3", title: "Desarrollo", color: "#059669", light: "#d1fae5", icon: <Code2 size={16} />,
         children: [
-          { id: "3.3.1", code: "3.3.1", title: "Módulo Caja Central" },
-          { id: "3.3.2", code: "3.3.2", title: "Módulo Dashboard" },
-          { id: "3.3.3", code: "3.3.3", title: "Módulo de Liquidación y Anulación" },
-          { id: "3.3.4", code: "3.3.4", title: "Desarrollo de APIs de Integración" },
-          { id: "3.3.5", code: "3.3.5", title: "Desarrollo de APIs de Pasarela de Pagos" },
-          { id: "3.3.6", code: "3.3.6", title: "Pruebas Integrales" },
-          { id: "3.3.7", code: "3.3.7", title: "Manual de Usuario", tooltip: "como se muestra en el edt del AV de la semana 2 unidad 1" },
-          { id: "3.3.8", code: "3.3.8", title: "Manual de Instalación", tooltip: "como se muestra en el edt del AV de la semana 2 unidad 1" },
-          { id: "3.3.9", code: "3.3.9", title: "Acta de Aceptación" }
+          { id: "3.3.1", code: "3.3.1", title: "Configuración de Entorno de Desarrollo y Repositorio" },
+          { id: "3.3.2", code: "3.3.2", title: "Módulo Caja Central" },
+          { id: "3.3.3", code: "3.3.3", title: "Módulo Dashboard y Gestión del Sistema" },
+          { id: "3.3.4", code: "3.3.4", title: "Módulo de Liquidación y Anulación" },
+          { id: "3.3.5", code: "3.3.5", title: "Desarrollo de APIs de Integración" },
+          { id: "3.3.6", code: "3.3.6", title: "Desarrollo de APIs de Pasarela de Pagos" },
+          { id: "3.3.7", code: "3.3.7", title: "Pruebas Integrales" },
+          { id: "3.3.8", code: "3.3.8", title: "Manual de Usuario", tooltip: "como se muestra en el edt del AV de la semana 2 unidad 1" },
+          { id: "3.3.9", code: "3.3.9", title: "Manual de Instalación", tooltip: "como se muestra en el edt del AV de la semana 2 unidad 1" },
+          { id: "3.3.10", code: "3.3.10", title: "Acta de Aceptación de Desarrollo" }
         ]
       },
       {
@@ -96,7 +97,7 @@ const EDT_TREE: TreeNodeData[] = [
           { id: "3.4.3", code: "3.4.3", title: "Pruebas Funcionales y de Aceptación (UAT)" },
           { id: "3.4.4", code: "3.4.4", title: "Pruebas no Funcionales" },
           { id: "3.4.5", code: "3.4.5", title: "Corrección de Defectos" },
-          { id: "3.4.6", code: "3.4.6", title: "Acta de Aceptación" }
+          { id: "3.4.6", code: "3.4.6", title: "Acta de Aceptación de Pruebas" }
         ]
       },
       {
@@ -104,7 +105,7 @@ const EDT_TREE: TreeNodeData[] = [
         children: [
           { id: "3.5.1", code: "3.5.1", title: "Instalación en Ambiente de Producción" },
           { id: "3.5.2", code: "3.5.2", title: "Capacitación a Usuarios" },
-          { id: "3.5.3", code: "3.5.3", title: "Acta de Aceptación" }
+          { id: "3.5.3", code: "3.5.3", title: "Acta de Aceptación de Implementación" }
         ]
       }
     ]
