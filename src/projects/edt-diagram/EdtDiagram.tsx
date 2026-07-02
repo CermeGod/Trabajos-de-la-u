@@ -93,7 +93,7 @@ const EDT_TREE: TreeNodeData[] = [
         children: [
           { id: "3.4.1", code: "3.4.1", title: "Plan de Pruebas" },
           { id: "3.4.2", code: "3.4.2", title: "Instalación de Ambiente de Pruebas" },
-          { id: "3.4.3", code: "3.4.3", title: "Pruebas Funcionales" },
+          { id: "3.4.3", code: "3.4.3", title: "Pruebas Funcionales y de Aceptación (UAT)" },
           { id: "3.4.4", code: "3.4.4", title: "Pruebas no Funcionales" },
           { id: "3.4.5", code: "3.4.5", title: "Corrección de Defectos" },
           { id: "3.4.6", code: "3.4.6", title: "Acta de Aceptación" }
@@ -776,34 +776,7 @@ export default function App() {
         <span>✥ <b style={{ color: '#64748b' }}>Click der pan</b></span>
       </div>
 
-      {/* Floating window for corrections */}
-      <div style={{
-        position: 'fixed', top: 18, right: 24,
-        background: 'rgba(15,23,42,0.9)',
-        border: '1px solid rgba(148,163,184,0.2)',
-        borderRadius: 12, padding: 16, width: 340,
-        color: '#e2e8f0', fontSize: 12, lineHeight: 1.5,
-        backdropFilter: 'blur(12px)',
-        boxShadow: '0 10px 30px rgba(0,0,0,0.3)',
-        zIndex: 100
-      }}>
-        <h3 style={{ margin: '0 0 10px 0', fontSize: 13, color: '#f8fafc', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: 6 }}>
-          📝 Correcciones y Mejoras (Profesor y PPTs)
-        </h3>
-        <p style={{ margin: '0 0 4px 0', color: '#6ee7b7', fontWeight: 600 }}>✅ Puntos corregidos:</p>
-        <ul style={{ margin: '0 0 10px 0', paddingLeft: 18, color: '#94a3b8' }}>
-          <li>Eliminación de Validación de Paso y Migración de Datos Oficial.</li>
-          <li>Cambio de nombres a <b>Desarrollo</b> e <b>Implementación</b>.</li>
-          <li>Separación en Manual de Usuario y Manual de Instalación (movidos a Desarrollo).</li>
-          <li>Inclusión de <b>Acta de Aceptación</b> al final de cada fase de Ejecución.</li>
-          <li>En Pruebas se reincorporó <b>Corrección de Defectos</b> al final.</li>
-          <li>En Cierre se dejó solo el Acta.</li>
-        </ul>
-        <p style={{ margin: '0 0 4px 0', color: '#fbbf24', fontWeight: 600 }}>⚠️ Lo que no corregimos y por qué:</p>
-        <ul style={{ margin: 0, paddingLeft: 18, color: '#94a3b8' }}>
-          <li><b>Manuales separados:</b> Aunque el profe sugirió agruparlos, la PPT indica separación.</li>
-        </ul>
-      </div>
+
     </div>
   );
 }
