@@ -46,7 +46,7 @@ const EDR_TREE: TreeNodeData[] = [
       {
         id: "1.1", code: "1.1", title: "Equipo de Dirección",
         children: [
-          { id: "1.1.1", code: "1.1.1", title: "Sponsor (Dir. Tesorería)" },
+          { id: "1.1.1", code: "1.1.1", title: "Sponsor (Jefe de Caja Central)" },
           { id: "1.1.2", code: "1.1.2", title: "Jefe de Proyecto" }
         ]
       },
@@ -56,7 +56,8 @@ const EDR_TREE: TreeNodeData[] = [
           { id: "1.2.1", code: "1.2.1", title: "Jefe de Desarrollo" },
           { id: "1.2.2", code: "1.2.2", title: "Analista Funcional" },
           { id: "1.2.3", code: "1.2.3", title: "Desarrollador Backend" },
-          { id: "1.2.4", code: "1.2.4", title: "Desarrollador Frontend" }
+          { id: "1.2.4", code: "1.2.4", title: "Desarrollador Frontend" },
+          { id: "1.2.5", code: "1.2.5", title: "Administrador de Base de Datos (DBA)" }
         ]
       },
       {
@@ -68,9 +69,10 @@ const EDR_TREE: TreeNodeData[] = [
       {
         id: "1.4", code: "1.4", title: "Interesados",
         children: [
-          { id: "1.4.1", code: "1.4.1", title: "Jefe de Caja Central" },
-          { id: "1.4.2", code: "1.4.2", title: "Cajeros (Usuarios)" },
-          { id: "1.4.3", code: "1.4.3", title: "Oficina de Economía" }
+          { id: "1.4.1", code: "1.4.1", title: "Personal de Caja" },
+          { id: "1.4.2", code: "1.4.2", title: "Administrador de Caja Central" },
+          { id: "1.4.3", code: "1.4.3", title: "Coordinador de Recaudación" },
+          { id: "1.4.4", code: "1.4.4", title: "Jefaturas (Admisión/Matrícula/Grados)" }
         ]
       }
     ]
