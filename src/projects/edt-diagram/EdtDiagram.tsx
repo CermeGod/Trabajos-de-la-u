@@ -122,7 +122,7 @@ const INITIAL_NODES: FlatNode[] = [];
 const INITIAL_EDGES: { from: string; to: string }[] = [];
 
 INITIAL_NODES.push({
-  id: 'root', label: 'Plataforma Integral de Recaudación\ny Control de Paso UNJFSC',
+  id: 'root', label: 'Plataforma Integral de Recaudación\ny Control de Caja para la UNJFSC',
   code: '1.0', type: 'root', color: '#1e3a5f', light: '#0f172a',
   icon: <Layers size={22} />,
 });
