@@ -59,9 +59,8 @@ const EDT_TREE: TreeNodeData[] = [
       {
         id: "3.1", code: "3.1", title: "Análisis", color: "#0d9488", light: "#ccfbf1", icon: <Search size={16} />,
         children: [
-          { id: "3.1.1", code: "3.1.1", title: "Revisión de Procesos" },
-          { id: "3.1.2", code: "3.1.2", title: "Documento de Análisis de Requisitos" },
-          { id: "3.1.3", code: "3.1.3", title: "Acta de Aceptación de Análisis" }
+          { id: "3.1.1", code: "3.1.1", title: "Documento de Análisis de Requisitos" },
+          { id: "3.1.2", code: "3.1.2", title: "Acta de Aceptación de Análisis" }
         ]
       },
       {
@@ -70,7 +69,7 @@ const EDT_TREE: TreeNodeData[] = [
           { id: "3.2.1", code: "3.2.1", title: "Diseño de Arquitectura de Solución" },
           { id: "3.2.2", code: "3.2.2", title: "Diseño de Base de Datos" },
           { id: "3.2.3", code: "3.2.3", title: "Diseño de Integración de APIs" },
-          { id: "3.2.4", code: "3.2.4", title: "Diseño de Interfaces UI/UX" },
+          { id: "3.2.4", code: "3.2.4", title: "Diseño de Interfaz UI/UX" },
           { id: "3.2.5", code: "3.2.5", title: "Acta de Aceptación de Diseño" }
         ]
       },
@@ -78,14 +77,14 @@ const EDT_TREE: TreeNodeData[] = [
         id: "3.3", code: "3.3", title: "Desarrollo", color: "#059669", light: "#d1fae5", icon: <Code2 size={16} />,
         children: [
           { id: "3.3.1", code: "3.3.1", title: "Configuración de Entorno de Desarrollo y Repositorio" },
-          { id: "3.3.2", code: "3.3.2", title: "Módulo Caja Central" },
+          { id: "3.3.2", code: "3.3.2", title: "Módulo de Caja Central" },
           { id: "3.3.3", code: "3.3.3", title: "Módulo Dashboard y Gestión del Sistema" },
           { id: "3.3.4", code: "3.3.4", title: "Módulo de Liquidación y Anulación" },
-          { id: "3.3.5", code: "3.3.5", title: "Desarrollo de APIs de Integración" },
-          { id: "3.3.6", code: "3.3.6", title: "Desarrollo de APIs de Pasarela de Pagos" },
-          { id: "3.3.7", code: "3.3.7", title: "Pruebas Integrales" },
-          { id: "3.3.8", code: "3.3.8", title: "Manual de Usuario", tooltip: "como se muestra en el edt del AV de la semana 2 unidad 1" },
-          { id: "3.3.9", code: "3.3.9", title: "Manual de Instalación", tooltip: "como se muestra en el edt del AV de la semana 2 unidad 1" },
+          { id: "3.3.5", code: "3.3.5", title: "API de Integración" },
+          { id: "3.3.6", code: "3.3.6", title: "API de Pasarela de Pago" },
+          { id: "3.3.7", code: "3.3.7", title: "Pruebas Integrales de Desarrollo" },
+          { id: "3.3.8", code: "3.3.8", title: "Manual de Usuario" },
+          { id: "3.3.9", code: "3.3.9", title: "Manual de Instalación" },
           { id: "3.3.10", code: "3.3.10", title: "Acta de Aceptación de Desarrollo" }
         ]
       },
@@ -93,17 +92,15 @@ const EDT_TREE: TreeNodeData[] = [
         id: "3.4", code: "3.4", title: "Pruebas", color: "#d97706", light: "#fef3c7", icon: <TestTube2 size={16} />,
         children: [
           { id: "3.4.1", code: "3.4.1", title: "Plan de Pruebas" },
-          { id: "3.4.2", code: "3.4.2", title: "Instalación de Ambiente de Pruebas" },
-          { id: "3.4.3", code: "3.4.3", title: "Pruebas Funcionales y de Aceptación (UAT)" },
-          { id: "3.4.4", code: "3.4.4", title: "Pruebas no Funcionales" },
-          { id: "3.4.5", code: "3.4.5", title: "Corrección de Defectos" },
-          { id: "3.4.6", code: "3.4.6", title: "Acta de Aceptación de Pruebas" }
+          { id: "3.4.2", code: "3.4.2", title: "Ambiente de Pruebas Instalado" },
+          { id: "3.4.3", code: "3.4.3", title: "Informe de Pruebas" },
+          { id: "3.4.4", code: "3.4.4", title: "Acta de Aceptación de Pruebas" }
         ]
       },
       {
         id: "3.5", code: "3.5", title: "Implementación", color: "#7c3aed", light: "#ede9fe", icon: <Rocket size={16} />,
         children: [
-          { id: "3.5.1", code: "3.5.1", title: "Instalación en Ambiente de Producción" },
+          { id: "3.5.1", code: "3.5.1", title: "Plataforma Instalada en Ambiente de Producción" },
           { id: "3.5.2", code: "3.5.2", title: "Capacitación a Usuarios" },
           { id: "3.5.3", code: "3.5.3", title: "Acta de Aceptación de Implementación" }
         ]

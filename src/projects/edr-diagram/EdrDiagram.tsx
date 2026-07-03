@@ -46,27 +46,31 @@ const EDR_TREE: TreeNodeData[] = [
       {
         id: "1.1", code: "1.1", title: "Equipo de Dirección",
         children: [
-          { id: "1.1.1", code: "1.1.1", title: "Project Manager" }
+          { id: "1.1.1", code: "1.1.1", title: "Sponsor (Dir. Tesorería)" },
+          { id: "1.1.2", code: "1.1.2", title: "Jefe de Proyecto" }
         ]
       },
       {
         id: "1.2", code: "1.2", title: "Equipo de Desarrollo",
         children: [
-          { id: "1.2.1", code: "1.2.1", title: "Desarrollador Frontend" },
-          { id: "1.2.2", code: "1.2.2", title: "Desarrollador Backend" },
-          { id: "1.2.3", code: "1.2.3", title: "Arquitecto de BD" }
+          { id: "1.2.1", code: "1.2.1", title: "Jefe de Desarrollo" },
+          { id: "1.2.2", code: "1.2.2", title: "Analista Funcional" },
+          { id: "1.2.3", code: "1.2.3", title: "Desarrollador Backend" },
+          { id: "1.2.4", code: "1.2.4", title: "Desarrollador Frontend" }
         ]
       },
       {
         id: "1.3", code: "1.3", title: "Equipo de Calidad",
         children: [
-          { id: "1.3.1", code: "1.3.1", title: "QA Tester" }
+          { id: "1.3.1", code: "1.3.1", title: "Analista QA" }
         ]
       },
       {
         id: "1.4", code: "1.4", title: "Interesados",
         children: [
-          { id: "1.4.1", code: "1.4.1", title: "Personal de Caja (Validadores UAT)" }
+          { id: "1.4.1", code: "1.4.1", title: "Jefe de Caja Central" },
+          { id: "1.4.2", code: "1.4.2", title: "Cajeros (Usuarios)" },
+          { id: "1.4.3", code: "1.4.3", title: "Oficina de Economía" }
         ]
       }
     ]
@@ -74,7 +78,7 @@ const EDR_TREE: TreeNodeData[] = [
   {
     id: "2", code: "2", title: "Equipamiento e Infraestructura", color: "#4f46e5", light: "#e0e7ff", icon: <Layers size={16} />,
     children: [
-      { id: "2.1", code: "2.1", title: "Servidores en la Nube (AWS/Vercel)" },
+      { id: "2.1", code: "2.1", title: "Servidores (UNJFSC/Virtuales)" },
       { id: "2.2", code: "2.2", title: "Equipos de Cómputo (Laptops)" },
       { id: "2.3", code: "2.3", title: "Lectores POS" }
     ]
