@@ -69,10 +69,9 @@ const EDR_TREE: TreeNodeData[] = [
       {
         id: "1.4", code: "1.4", title: "Interesados",
         children: [
-          { id: "1.4.1", code: "1.4.1", title: "Personal de Caja" },
-          { id: "1.4.2", code: "1.4.2", title: "Administrador de Caja Central" },
-          { id: "1.4.3", code: "1.4.3", title: "Coordinador de Recaudación" },
-          { id: "1.4.4", code: "1.4.4", title: "Jefaturas (Admisión/Matrícula/Grados)" }
+          { id: "1.4.1", code: "1.4.1", title: "Administrador de Caja Central" },
+          { id: "1.4.2", code: "1.4.2", title: "Coordinador de Recaudación" },
+          { id: "1.4.3", code: "1.4.3", title: "Jefaturas (Admisión/Matrícula/Grados)" }
         ]
       }
     ]
