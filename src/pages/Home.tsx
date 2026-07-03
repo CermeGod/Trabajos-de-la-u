@@ -43,14 +43,29 @@ export default function Home() {
             </div>
           </Link>
 
-          {/* Placeholders for future projects */}
-          <div className="border border-dashed border-slate-800 rounded-2xl flex flex-col items-center justify-center p-8 text-center text-slate-500 bg-slate-900/50">
-            <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center mb-4">
-              <span className="text-xl font-bold">+</span>
+          <Link to="/edr" className="group block bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-1">
+            <div className="h-32 bg-slate-800 relative overflow-hidden">
+              <div className="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity" 
+                   style={{backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)', backgroundSize: '16px 16px'}}>
+              </div>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <Briefcase size={48} className="text-emerald-500/50 group-hover:text-emerald-400 transition-colors" />
+              </div>
             </div>
-            <h3 className="font-semibold text-slate-400 mb-1">Próximo Proyecto</h3>
-            <p className="text-sm">Disponible en el futuro</p>
-          </div>
+            <div className="p-6 relative">
+              <h2 className="text-xl font-bold text-white mb-2 flex items-center justify-between">
+                EDR Interactiva
+                <ArrowRight size={18} className="text-emerald-400 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+              </h2>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                Herramienta interactiva para la creación y gestión visual de la Estructura de Desglose de Recursos (RBS/EDR).
+              </p>
+              <div className="mt-6 flex gap-2">
+                <span className="text-xs font-medium bg-emerald-500/10 text-emerald-400 px-2 py-1 rounded-md border border-emerald-500/20">React</span>
+                <span className="text-xs font-medium bg-teal-500/10 text-teal-400 px-2 py-1 rounded-md border border-teal-500/20">SVG Canvas</span>
+              </div>
+            </div>
+          </Link>
 
         </main>
       </div>
